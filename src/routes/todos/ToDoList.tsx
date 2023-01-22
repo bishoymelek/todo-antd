@@ -4,11 +4,9 @@ import { Row, Col, Card, PageHeader, message } from 'antd';
 
 import TodoList from 'components/to-do-list';
 import AddTodoForm from 'components/add-to-do-form';
-
 import { RootState } from 'store/rootReducer';
 import { ITodo } from 'store/todo/models/todo.model';
 import { addTodo, removeTodo, toggleTodoStatus } from 'store/todo/actions';
-
 interface ITodosContainerProps {}
 
 export const TodoListRoute: React.FC<ITodosContainerProps> = () => {
@@ -25,7 +23,6 @@ export const TodoListRoute: React.FC<ITodosContainerProps> = () => {
     dispatch(removeTodo(todo));
     message.warn('Todo removed!');
   };
-
   const handleToggleTodoStatus = (todo: ITodo): void => {
     dispatch(toggleTodoStatus(todo));
     message.info('Todo state updated!');
